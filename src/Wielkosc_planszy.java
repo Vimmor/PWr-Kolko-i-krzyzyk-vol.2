@@ -21,7 +21,7 @@ public class Wielkosc_planszy extends JFrame implements ActionListener {
         w.setBounds(20, 20, 200, 20);
         add(w);
 
-        wielkosc = new JTextField("");
+        wielkosc = new JTextField();
         wielkosc.setBounds(220, 20, 150, 20);
         add(wielkosc);
 
@@ -35,7 +35,7 @@ public class Wielkosc_planszy extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e){
-        rozmiar_planszy = Integer.parseInt(wielkosc.getText());
+        rozmiar_planszy = Integer.valueOf(wielkosc.getText());
         setVisible(false);
     }
 
