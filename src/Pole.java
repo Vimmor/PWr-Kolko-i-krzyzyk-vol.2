@@ -4,7 +4,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class Pole extends JPanel {
-    private int x,y,stan,wielkosc;
+    int x,y,stan,wielkosc;
 
     public Pole(Plansza plansza){
         super();
@@ -22,17 +22,18 @@ public class Pole extends JPanel {
         });
     }
 
-    protected void paintComponent(Graphics g){
+    @Override
+    protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        Graphics2D grafika2D = (Graphics2D) g;
-        grafika2D.setStroke(new BasicStroke(3));
+        Graphics2D grafika2d = (Graphics2D) g;
+        grafika2d.setStroke(new BasicStroke(3));
         if (stan == 0) {
-            grafika2D.drawLine(0, 0, (800 + 60) / wielkosc, 800 / wielkosc);
-            grafika2D.drawLine(840 / wielkosc, 0, 0, 780 / wielkosc);
+            grafika2d.drawLine(0, 0, (800 + 60) / wielkosc, 800 / wielkosc);
+            grafika2d.drawLine(840 / wielkosc, 0, 0, 780 / wielkosc);
         }
         if(stan == 1 )
         {
-            grafika2D.drawOval(0,0,840/wielkosc,780/wielkosc);
+            grafika2d.drawOval(0,0,840/wielkosc,780/wielkosc);
         }
     }
 
@@ -50,10 +51,6 @@ public class Pole extends JPanel {
         return stan;
     }
 
-    public int getWielksoc() {
-        return wielkosc;
-    }
-
     public void setX(int x) {
         this.x = x;
     }
@@ -66,7 +63,11 @@ public class Pole extends JPanel {
         this.stan = stan;
     }
 
-    public void setWielksoc(int wielksoc) {
-        this.wielkosc = wielksoc;
+    public int getWielkosc() {
+        return wielkosc;
+    }
+
+    public void setWielkosc(int wielkosc) {
+        this.wielkosc = wielkosc;
     }
 }

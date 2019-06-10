@@ -8,12 +8,12 @@ public class Plansza extends JPanel {
     GridLayout layout = new GridLayout();
 
     public Plansza(){
-        czarna_linia = BorderFactory.createLineBorder(Color.BLACK);
+        czarna_linia = BorderFactory.createLineBorder(Color.black);
         setLayout(layout);
         setVisible(false);
     }
 
-    public void setSize(int _wielkosc){
+    public void setWielkosc(int _wielkosc){
         layout.setColumns(_wielkosc);
         layout.setRows(_wielkosc);
         tablica_pol = new Pole[_wielkosc][_wielkosc];
@@ -24,6 +24,7 @@ public class Plansza extends JPanel {
         for(int i=0;i<_wielkosc;i++){
             for(int j=0;j<_wielkosc;j++){
                 Pole p = new Pole(this);
+                p.setWielkosc(_wielkosc);
                 p.setX(j);
                 p.setY(i);
                 p.setBackground(Color.white);

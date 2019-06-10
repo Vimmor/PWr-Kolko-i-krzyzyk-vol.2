@@ -35,7 +35,15 @@ public class Wielkosc_planszy extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e){
-        rozmiar_planszy = Integer.valueOf(wielkosc.getText());
+        rozmiar_planszy = Integer.parseInt(wielkosc.getText());
         setVisible(false);
+    }
+
+    public void setRozmiar_planszy(int rozmiar_planszy) {
+        this.rozmiar_planszy = rozmiar_planszy;
+    }
+
+    public int getRozmiar_planszy() {
+        return rozmiar_planszy;
     }
 }

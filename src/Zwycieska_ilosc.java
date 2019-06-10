@@ -36,7 +36,7 @@ public class Zwycieska_ilosc extends JFrame implements ActionListener {
         if(wartosc.equals(""))
             JOptionPane.showMessageDialog(null, "Nie udalo sie wybrac zwycieskiej ilosc danej figury.");
         else
-             zwyciestwo = Integer.valueOf(wartosc.getText());
+             zwyciestwo = Integer.parseInt(wartosc.getText());
         setVisible(false);
     }
 }
