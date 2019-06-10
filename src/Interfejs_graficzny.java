@@ -31,6 +31,7 @@ public class Interfejs_graficzny extends JFrame {
              plansza.setWielkosc(wielkosc.getRozmiar_planszy());
              plansza.revalidate();
              plansza.repaint();
+             plansza.setZwycieska_ilosc(ilosc.getZwyciestwo());
              plansza.setVisible(true);
          });
          panel.add(start_gry);

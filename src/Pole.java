@@ -18,6 +18,8 @@ public class Pole extends JPanel {
 
             @Override
             public void mouseReleased(MouseEvent e) {
+                if(plansza.sprawdz_zwyciestwo(wielkosc)==true)
+                    JOptionPane.showMessageDialog(null, "Gratulacje, zwyciezyles!!!!");
             }
         });
     }

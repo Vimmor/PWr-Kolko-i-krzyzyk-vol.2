@@ -39,4 +39,12 @@ public class Zwycieska_ilosc extends JFrame implements ActionListener {
              zwyciestwo = Integer.parseInt(wartosc.getText());
         setVisible(false);
     }
+
+    public int getZwyciestwo() {
+        return zwyciestwo;
+    }
+
+    public void setZwyciestwo(int zwyciestwo) {
+        this.zwyciestwo = zwyciestwo;
+    }
 }
