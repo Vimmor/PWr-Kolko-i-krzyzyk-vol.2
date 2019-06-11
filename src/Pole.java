@@ -4,7 +4,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class Pole extends JPanel {
-    int x,y,stan,wielkosc;
+    private int x,y,stan,wielkosc;
 
     public Pole(Plansza plansza) {
         super();
@@ -12,10 +12,16 @@ public class Pole extends JPanel {
         addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
-                stan = 0;
                 plansza.wypelnijWektor(wielkosc);
-                repaint();
-                /*
+                if(!plansza.sprawdz_remis(plansza.getWektor())) {
+                    stan = 0;
+                    repaint();
+                }
+                if(plansza.sprawdz_zwyciestwo(wielkosc)) {
+                    plansza.setZwyciesca(Plansza.Zwyciesca.GRACZ);
+                    JOptionPane.showMessageDialog(null, "Wygrywasz graczu!", "Wygrana", JOptionPane.INFORMATION_MESSAGE);
+                }
+                /* Ten fragment kodu nalezaloby odkomentowac w przypadku checi gry z druga osoba(oprocz tego zakomentowac pozostale warunki w mousepressed i mousereleased
                 if(plansza.getGlobalny_stan()==0){
                     stan=0;
                     plansza.setGlobalny_stan(1);
@@ -27,11 +33,11 @@ public class Pole extends JPanel {
             }
             @Override
             public void mouseReleased(MouseEvent e) {
-                plansza.ruchGracza(plansza.getWektor(), 1, wielkosc);
+                plansza.ruch(plansza.getWektor(), 1, wielkosc);
                 plansza.repaint();
-                if (plansza.sprawdz_zwyciestwo(wielkosc) == true) {
-
-                    JOptionPane.showMessageDialog(null, "Wygrywa gracz X", "Wygrana", JOptionPane.INFORMATION_MESSAGE);//System.out.println("Wygryw");
+                if (plansza.sprawdz_zwyciestwo(wielkosc) == true && plansza.getZwyciesca()!= Plansza.Zwyciesca.GRACZ) {
+                    JOptionPane.showMessageDialog(null, "Niestety, wygralo AI :(", "Wygrana", JOptionPane.INFORMATION_MESSAGE);
+                   // System.out.println(plansza.getLicznik());
                 }
                 if (plansza.sprawdz_remis(plansza.getWektor()))
                     JOptionPane.showMessageDialog(null, "Remis", "Remis ", JOptionPane.INFORMATION_MESSAGE);

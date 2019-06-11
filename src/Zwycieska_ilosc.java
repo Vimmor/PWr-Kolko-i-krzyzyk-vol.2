@@ -6,11 +6,11 @@ public class Zwycieska_ilosc extends JFrame implements ActionListener {
     JTextField wartosc;
     JLabel tekst;
     JButton zmien_wartosc;
-    int zwyciestwo = 3;
+    private int zwyciestwo = 3;
 
     public Zwycieska_ilosc(){
         super("Zwycieska wartosc");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setLocation(400, 200);
         this.setSize(660, 90);
         this.setLayout(null);

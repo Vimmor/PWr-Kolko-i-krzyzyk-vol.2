@@ -4,9 +4,9 @@ import java.awt.*;
 public class Interfejs_graficzny extends JFrame {
      JButton start_gry, wybor_wielkosci, wybor_wartosci;
      JPanel panel;
-     Wielkosc_planszy wielkosc;
-     Zwycieska_ilosc ilosc;
-     Plansza plansza;
+     private Wielkosc_planszy wielkosc;
+     private Zwycieska_ilosc ilosc;
+     private Plansza plansza;
 
      public Interfejs_graficzny(){
          super("Kolko i krzyzyk");

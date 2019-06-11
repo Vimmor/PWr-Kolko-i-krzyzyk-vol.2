@@ -7,16 +7,16 @@ public class Wielkosc_planszy extends JFrame implements ActionListener {
     JLabel w;
     JButton zmien_wielkosc;
 
-    int rozmiar_planszy = 3;
+    private int rozmiar_planszy = 3;
 
     public Wielkosc_planszy(){
         super("Rozmiar planszy");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setLocation(400, 200);
         this.setSize(600, 90);
         this.setLayout(null);
 
-        w = new JLabel("Podaj rozmiar planszy, na ktorej bedziesz gral:");
+        w = new JLabel("Podaj rozmiar planszy:");
         //Mozemy okreslic dokladnie polozenie i rozmiar komponentu, po uprzednim ustawieniu layoutu na null
         w.setBounds(20, 20, 200, 20);
         add(w);
